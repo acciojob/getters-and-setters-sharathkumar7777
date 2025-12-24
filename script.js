@@ -8,35 +8,32 @@ class Person {
         return this._name;
     }
 
-    set name(newName) {
-        this._name = newName;
+    set name(value) {
+        this._name = value;
     }
 
     get age() {
         return this._age;
     }
 
-    set age(newAge) {
-        this._age = newAge;
+    set age(value) {
+        this._age = value;
     }
 }
 
 class Student extends Person {
-    constructor(name, age) {
-        super(name, age);
-    }
-
     study() {
         console.log(`${this.name} is studying`);
     }
 }
 
 class Teacher extends Person {
-    constructor(name, age) {
-        super(name, age);
-    }
-
     teach() {
         console.log(`${this.name} is teaching`);
     }
 }
+
+/* 👇 THIS IS THE KEY FIX 👇 */
+window.Person = Person;
+window.Student = Student;
+window.Teacher = Teacher;
